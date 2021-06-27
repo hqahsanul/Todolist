@@ -1,0 +1,27 @@
+app.post("/update", function (req, res) {
+  const checkedItemId = req.body.updatebox;
+  const listName = req.body.listName;
+
+if (listName === "Today") {
+    Item.findByIdAndUpdate(checkedItemId, {itemName:req.body.newItem}, function(err, data) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(data);
+            console.log("Data updated!");
+        }
+    }
+}
+  else {
+    item.findByIdAndUpdate(checkItedId, 
+    {itemName:req.body.newItem}, function(err, data) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(data);
+            console.log("Data updated!");
+        }
+    });  
+});
